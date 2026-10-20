@@ -4,7 +4,7 @@
 
   <p>
     An enterprise IT asset management plugin designed for native Claude usage.<br/>
-   .
+   
   </p>
 
 <!-- Badges -->
