@@ -13,7 +13,6 @@
   <img src="https://img.shields.io/badge/skills-23-14B8A6" alt="skills" />
   <img src="https://img.shields.io/badge/commands-9-3B82F6" alt="commands" />
   <img src="https://img.shields.io/badge/ServiceNow-HAM%20%2F%20SAM-62D84E" alt="ServiceNow" />
-  <img src="https://img.shields.io/badge/SharePoint-Online-0078D4" alt="SharePoint" />
   <a href="https://github.com/Nicholas-Odeh/itam-enterprise-toolkit/commits">
     <img src="https://img.shields.io/github/last-commit/Nicholas-Odeh/itam-enterprise-toolkit" alt="last update" />
   </a>
