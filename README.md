@@ -3,8 +3,8 @@
   <h1>ITAM Enterprise Toolkit</h1>
 
   <p>
-    Enterprise IT asset management for Claude, from request to disposal.<br/>
-    Evidence-first, audit-ready, read-only by default.
+    An enterprise IT asset management plugin designed for native Claude usage.<br/>
+   .
   </p>
 
 <!-- Badges -->
@@ -22,15 +22,6 @@
   </a>
 </p>
 
-<h4>
-    <a href="#how-it-works">How It Works</a>
-  <span> · </span>
-    <a href="#usage">Usage</a>
-  <span> · </span>
-    <a href="https://github.com/Nicholas-Odeh/itam-enterprise-toolkit/issues/">Report Bug</a>
-  <span> · </span>
-    <a href="https://github.com/Nicholas-Odeh/itam-enterprise-toolkit/issues/">Request Feature</a>
-</h4>
 </div>
 
 <br />
@@ -51,7 +42,7 @@
 - [FAQ](#faq)
 - [Contact](#contact)
 
-
+<br/>
 
 <!-- About the Project -->
 ## About the Project
@@ -63,6 +54,11 @@ You don't pick a skill or paste a long prompt. The toolkit routes each request, 
 
 <!-- How It Works -->
 ### How It Works
+1. **Session starts:** a startup hook loads the router skill, `using-itam-plugin`.
+2. **You ask:** the router picks the matching specialist skill, for example `servicenow-itam` for an asset record question.
+3. **The skill works:** it reads only the reference files it needs. For exact math it runs a Python script instead of estimating.
+4. **Quality check:** the shared operating standard checks every number, date and claim against evidence.
+5. **You get the answer:** sources are cited, assumptions are labeled, and anything unproven is called out.
 
 ```mermaid
 flowchart LR
@@ -74,51 +70,51 @@ flowchart LR
     F -- evidence found --> G([Answer with sources])
     F -- evidence missing --> H([Answer that says what is missing])
 ```
+<br/>
 
-1. **Session starts:** a startup hook loads the router skill, `using-itam-plugin`.
-2. **You ask:** the router picks the matching specialist skill, for example `servicenow-itam` for an asset record question.
-3. **The skill works:** it reads only the reference files it needs. For exact math it runs a Python script instead of estimating.
-4. **Quality check:** the shared operating standard checks every number, date and claim against evidence.
-5. **You get the answer:** sources are cited, assumptions are labeled, and anything unproven is called out.
-
+---
 
 <!-- TechStack -->
 ### Tech Stack
 
 <details>
   <summary>Plugin</summary>
+  </details>
   <ul>
     <li>23 Claude skills (<code>SKILL.md</code> plus reference files)</li>
     <li>9 slash commands</li>
     <li>1 read-only reviewer agent</li>
     <li>Session-start hook for automatic routing</li>
   </ul>
-</details>
+
 
 <details>
   <summary>Scripts</summary>
+  </details>
   <ul>
     <li><a href="https://www.python.org/">Python 3</a> (standard library only): matching, serial normalization, depreciation, TCO, SLA credits, RFx scoring, capacity</li>
     <li><a href="https://www.gnu.org/software/bash/">Bash</a>: session-start hook and shared-file sync</li>
   </ul>
-</details>
+
 
 <details>
   <summary>Platforms Covered</summary>
+  </details>
   <ul>
     <li><a href="https://www.servicenow.com/">ServiceNow</a> HAM, HAM Pro and SAM Pro</li>
     <li><a href="https://www.microsoft.com/microsoft-365/sharepoint">SharePoint Online</a> and Power Automate</li>
     <li>Microsoft Intune, Windows Autopilot and MECM</li>
     <li>Apple Business Manager (ADE)</li>
   </ul>
-</details>
 
 <details>
   <summary>Integrations</summary>
+  </details>
   <ul>
     <li><a href="https://modelcontextprotocol.io/">Model Context Protocol (MCP)</a> connectors by category: ITSM, CMDB, endpoint management, document repository, procurement, finance, HR</li>
   </ul>
-</details>
+
+---
 
 
 <!-- Features -->
@@ -132,6 +128,7 @@ flowchart LR
 - **Exact calculations:** Python scripts handle the math instead of estimates.
 - **Built-in reviewer:** the `itam-reviewer` agent returns RELEASE, RELEASE WITH FIXES or BLOCK on any draft.
 
+---
 
 <!-- Skill Reference -->
 ### Skill Reference
@@ -162,6 +159,7 @@ flowchart LR
 | | `itam-automation-scripting` | PowerShell, Python and Graph with safe-write rules |
 | | `itam-sop-documentation` | SOPs, work instructions, policies, runbooks |
 
+---
 
 <!-- Configuration -->
 ### Configuration
@@ -219,6 +217,7 @@ Or use a command:
 | `/itam-status` | Status report with evidence-based RAG |
 | `/itam-capacity` | Capacity check against planned demand |
 | `/itam-runbook` | Operational runbook with failure actions and escalation |
+
 
 
 <!-- FAQ -->
